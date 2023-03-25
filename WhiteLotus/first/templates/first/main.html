@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>HomeBase</title>
+  </head>
+  <body>
+  {% include 'first/navbar.html' %}
+
+  {% block base %} {% endblock %}
+  {% block forms %} {% endblock %}
+<!--  <ol>-->
+<!--    {% for i in proj %}-->
+<!--    <li><a href="{% url 'dynamic' i.id %}">{{i.title}}: {{i.description}}</a> </li>-->
+<!--    {% endfor %}-->
+<!--  </ol>-->
+  {% block content %} {% endblock %}
+  {% block delete %} {% endblock %}
+
+  {% include 'first/footer.html' %}
+
+  </body>
+</html>

@@ -1,0 +1,20 @@
+{% extends 'first/main.html' %}
+
+{% block content %}
+<!--<ul>-->
+<!--    <li>Title of project: {{ project.title }}</li>-->
+<!--</ul>-->
+<h1>{{p.title}}</h1>
+<br>
+{% for t in tag %}
+
+<p>{{t}}</p>
+
+{% endfor %}
+<!--<ol>-->
+<!--    {% for p in projects %}-->
+<!--       <li>Title of project is {{p.title}}</li>-->
+<!--    {% endfor %}-->
+
+<!--</ol>-->
+{% endblock %}

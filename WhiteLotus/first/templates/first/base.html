@@ -1,0 +1,30 @@
+{% extends 'first/main.html' %}
+{% block base %}
+
+<table>
+  <tr>
+    <th>Project Title</th>
+    <th>Project Created</th>
+    <th>Project Votes</th>
+    <th>Project Votes Ratio</th>
+    <th>Link</th>
+    <th>Update</th>
+    <th>Delete</th>
+  </tr>
+
+  {% for p in proj %}
+  <tr>
+
+    <td>{{p.title}}</td>
+    <td>{{p.created}}</td>
+    <td>{{p.vote_total}}</td>
+    <td>{{p.vote_ratio}}</td>
+    <td><a href="{% url 'dynamic' p.id %}">View</a></td>
+    <td><a href="{% url 'update_forms' p.id %}">Update</a></td>
+    <td><a href="{% url 'delete_forms' p.id %}">Delete</a></td>
+  </tr>
+  {% endfor %}
+
+</table>
+
+{% endblock %}

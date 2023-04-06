@@ -4,23 +4,23 @@ from .forms import ProjectForm
 
 # Create your views here.
 
-project_list = [
-    {
-        'id': '1',
-        'title': 'Ecommerce Website',
-        'description': 'This is a wide database web app for businesses',
-    },
-    {
-        'id': '2',
-        'title': 'Portfolio',
-        'description': 'This describes my skill-base',
-    },
-    {
-        'id': '3',
-        'title': 'Social Network',
-        'description': 'This is a social web app for connecting people',
-    },
-]
+# project_list = [
+#     {
+#         'id': '1',
+#         'title': 'Ecommerce Website',
+#         'description': 'This is a wide database web app for businesses',
+#     },
+#     {
+#         'id': '2',
+#         'title': 'Portfolio',
+#         'description': 'This describes my skill-base',
+#     },
+#     {
+#         'id': '3',
+#         'title': 'Social Network',
+#         'description': 'This is a social web app for connecting people',
+#     },
+# ]
 
 
 def index(request):
@@ -44,7 +44,7 @@ def forms(request):
     form = ProjectForm()
     if request.method == 'POST':
         # print(request.POST)
-        form = ProjectForm(request.POST)
+        form = ProjectForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
             return redirect('home')
@@ -57,7 +57,7 @@ def update_forms(request, pk):
     form = ProjectForm(instance=project)
     if request.method == 'POST':
         # print(request.POST)
-        form = ProjectForm(request.POST, instance=project)
+        form = ProjectForm(request.POST, request.FILES, instance=project)
         if form.is_valid():
             form.save()
             return redirect('home')

@@ -8,6 +8,7 @@ class Project(models.Model):
     title = models.CharField(max_length=200)
     description = models.TextField(null=True, blank=True)
     tags = models.ManyToManyField('Tag', blank=True)
+    profile_photo = models.ImageField(null=True, blank=True)
     # we put tag in quotes because we have created it after
     # if we created the Tag class above/before Project, we wouldn't use the quotes
     vote_total = models.IntegerField(default=0, null=True, blank=True)
